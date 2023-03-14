@@ -20,7 +20,7 @@ public class BuddiePlayerController : MonoBehaviour
     public BoxCollider2D leftTrigger;
     public BoxCollider2D groundTrigger;
 
-
+    
     private void Awake()
     {
         buddieControls = new BuddieControls();
@@ -87,7 +87,7 @@ public class BuddiePlayerController : MonoBehaviour
     {
         if (!isJumping)
         {
-            myRigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            myRigidBody.AddForce(new Vector2(0f, jumpForce * Time.deltaTime), ForceMode2D.Impulse);
             Debug.Log("Jumped");
         }
         
