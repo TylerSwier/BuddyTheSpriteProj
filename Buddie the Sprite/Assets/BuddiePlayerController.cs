@@ -29,7 +29,7 @@ public class BuddiePlayerController : MonoBehaviour
     void Start()
     {
         myRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        
+        //groundTrigger = gameObject.GetComponent<BoxCollider2D>();
 
     }
 
@@ -67,7 +67,7 @@ public class BuddiePlayerController : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(BoxCollider2D collision)
     {
         if (collision.gameObject.tag == "Platform")
         {
@@ -75,7 +75,7 @@ public class BuddiePlayerController : MonoBehaviour
             isJumping = false;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(BoxCollider2D collision)
     {
         if (collision.gameObject.tag == "Platform")
         {
